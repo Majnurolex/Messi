@@ -9,7 +9,7 @@ import time
 from threading import Timer
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7316393351:AAEGw75gEWIPUiYu5Pd7v_AmMV-TwBLKuPI')
+bot = telebot.TeleBot('7275541136:AAEFaF4FynGzQjCF0ya_LDNRPNgQw2oUwSY')
 
 # Admin user IDs
 admin_id = ["6022173368"]
@@ -218,7 +218,7 @@ def start_attack_reply(message, target, port, time):
 # Dictionary to store the last time each user ran the /bgmi command
 bgmi_cooldown = {}
 
-COOLDOWN_TIME = 60  # 60 seconds cooldown time
+COOLDOWN_TIME = 180  # 180 seconds cooldown time
 
 # Handler for /bgmi command
 @bot.message_handler(commands=['bgmi'])
@@ -240,8 +240,8 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert port to integer
             time = int(command[3])  # Convert time to integer
-            if time > 400:
-                response = "ᴇʀʀᴏʀ: ᴍᴀx ᴀᴛᴛᴀᴄᴋ sᴇᴄᴏɴᴅ 399sᴇᴄ ❌."
+            if time > 300:
+                response = "ᴇʀʀᴏʀ: ᴍᴀx ᴀᴛᴛᴀᴄᴋ sᴇᴄᴏɴᴅ 300sᴇᴄ ❌."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
